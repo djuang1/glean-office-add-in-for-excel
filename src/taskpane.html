@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Glean</title>
+
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
+    <script type="text/javascript" src="functions.js"></script>
+    <script type="text/javascript" src="taskpane.js"></script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f3f2f1;
+            color: #323130;
+        }
+        
+        .container {
+            max-width: 100%;
+            background: white;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #0078d4;
+            margin-top: 0;
+            margin-bottom: 24px;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #323130;
+        }
+        
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #8a8886;
+            border-radius: 4px;
+            font-size: 14px;
+            box-sizing: border-box;
+            transition: border-color 0.2s;
+        }
+        
+        input[type="text"]:focus, input[type="password"]:focus {
+            outline: none;
+            border-color: #0078d4;
+            box-shadow: 0 0 0 1px #0078d4;
+        }
+        
+        .button-group {
+            display: flex;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        button {
+            flex: 1;
+            padding: 10px 16px;
+            border: none;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        
+        .primary-button {
+            background-color: #0078d4;
+            color: white;
+        }
+        
+        .primary-button:hover {
+            background-color: #106ebe;
+        }
+        
+        .secondary-button {
+            background-color: #f3f2f1;
+            color: #323130;
+            border: 1px solid #8a8886;
+        }
+        
+        .secondary-button:hover {
+            background-color: #edebe9;
+        }
+        
+        .status {
+            margin-top: 16px;
+            padding: 12px;
+            border-radius: 4px;
+            display: none;
+        }
+        
+        .status.success {
+            background-color: #dff6dd;
+            color: #107c10;
+            border: 1px solid #92c5f7;
+        }
+        
+        .status.error {
+            background-color: #fed9cc;
+            color: #d13438;
+            border: 1px solid #d13438;
+        }
+    </style>
+
+  </head>
+
+  <body>
+     <div class="container">
+        <h1>Configure</h1>
+        
+        <div class="input-group">
+            <label for="field1">Instance Name</label>
+            <input type="text" id="field1" placeholder="e.g. support-lab">
+        </div>
+        
+        <div class="input-group">
+            <label for="field2">API Token</label>
+            <input type="password" id="field2" placeholder="Instance Client API Token">
+        </div>
+        
+        <div class="button-group">
+            <button class="primary-button" onclick="insertData()">Save</button>
+            <button class="secondary-button" onclick="clearFields()">Clear</button>
+        </div>
+        
+        <div id="status" class="status"></div>
+    </div>
+  </body>
+
+  </html>

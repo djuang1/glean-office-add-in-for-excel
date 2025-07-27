@@ -1,0 +1,22 @@
+{
+  "functions": [
+    {
+      "id": "SEARCH",
+      "name": "SEARCH",
+      "description": "Search Glean",
+      "helpUrl": "https://developers.glean.com/",
+      "result": {
+        "type": "any",
+        "dimensionality": "scalar"
+      },
+      "parameters": [
+        {
+          "name": "query",
+          "description": "Ask anything...",
+          "type": "string",
+          "dimensionality": "scalar"
+        }
+      ]
+    }
+  ]
+}
