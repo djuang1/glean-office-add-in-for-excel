@@ -63,7 +63,7 @@ function invokeFunction(name, parameters) {
 
 function webRequest(input) {
     let url = "https://" + gleanGlobals.instance + "-be.glean.com/rest/api/v1/chat";
-
+    
     console.log("Glean Instance: ", gleanGlobals.instance);
 
     let headers = {
