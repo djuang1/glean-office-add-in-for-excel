@@ -26,33 +26,6 @@ async function insertData() {
     window.gleanGlobals.token = field2Value;
 
     showStatus(`Configuration applied`, 'success');
-    
-    // try {
-    //     await Excel.run(async (context) => {
-    //         // Get the active worksheet
-    //         const worksheet = context.workbook.worksheets.getActiveWorksheet();
-
-    //         // Get the selected range or use A1:B1 as default
-    //         const range = context.workbook.getSelectedRange();
-    //         range.load("address");
-
-    //         await context.sync();
-
-    //         // Insert data into the selected range
-    //         const values = [[field1Value, field2Value]];
-    //         range.values = values;
-
-    //         // Auto-fit columns
-    //         range.format.autofitColumns();
-
-    //         await context.sync();
-
-    //         showStatus(`Data inserted successfully at ${range.address}`, 'success');
-    //     });
-    // } catch (error) {
-    //     console.error('Error inserting data:', error);
-    //     showStatus('Error inserting data: ' + error.message, 'error');
-    // }
 }
 
 function clearFields() {
