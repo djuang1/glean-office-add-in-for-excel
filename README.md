@@ -2,7 +2,7 @@
 
 ## Summary
 
-Glean Office Add-In for Excel
+Glean Office Add-In for Excel. This add-in allows you to quickly search your Glean instance from Excel. It provides a custom function that will perform a search against a cell or a text string.
 
 ## Features
 
