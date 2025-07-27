@@ -18,15 +18,15 @@ Glean Office Add-In for Excel
 
 ### Manifest
 
-The manifest file is an XML file that describes your add-in to Office. It contains information such as a unique identifier, name, what buttons to show on the ribbon, and more. Importantly the manifest provides URL locations for where Office can find and download the add-in's resource files.
+The manifest file is an XML file that describes an add-in to Office. It contains information such as a unique identifier, name, what buttons to show on the ribbon, and more. Importantly the manifest provides URL locations for where Office can find and download the add-in's resource files.
 
-- **manifest.xml**: This manifest file gets the add-in's HTML page from the original GitHub repo location. This is the quickest way to try out the sample. To get started running the add-in with this manifest, see [Run the sample on Excel on Windows or Mac](#run-the-sample-on-excel-on-windows-or-mac).
+- **manifest.xml**: This manifest file gets the add-in's HTML page from this repo. This is the quickest way to try out the sample. 
 
 ## Run the sample on Excel on web
 
-An Glean Office Add-in requires you to configure a web server to provide all the resources, such as HTML, image, and JavaScript files. 
+The Glean Office Add-in requires you to configure a web server to provide all the resources, such as HTML, image, and JavaScript files. 
 
-The Glean Add-In is configured so that the files are hosted directly from this GitHub repo. Use the following steps to sideload the manifest.xml file to see the sample run.
+The Glean Office Add-in for Excel is configured so that the files are hosted directly from this GitHub repo. Use the following steps to sideload the manifest.xml file to see the sample run.
 
 1.  Download the **manifest.xml** file from the sample folder for Excel.
 1.  Open [Office on the web](https://office.live.com/).
@@ -38,7 +38,7 @@ The Glean Add-In is configured so that the files are hosted directly from this G
 
 ## Questions and feedback
 
-- Did you experience any problems with the sample? [Create an issue](https://github.com/OfficeDev/Office-Add-in-samples/issues/new/choose) and we'll help you out.
+- Did you experience any problems with the sample? [Create an issue](https://github.com/djuang1/glean-office-add-in-for-excel/issues/new/choose) and we'll help you out.
 
 ## Copyright
 
