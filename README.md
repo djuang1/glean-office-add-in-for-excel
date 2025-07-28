@@ -2,11 +2,10 @@
 
 ## Summary
 
-Glean Office Add-In for Excel. This add-in allows you to quickly search your Glean instance from Excel. It provides a custom function that will perform a search against a cell or a text string.
+Glean Office Add-In for Excel. This proof-of-concept add-in allows you to quickly search your Glean instance from Excel. It provides a custom function that will perform a search against a cell or a text string.
 
-## Features
-
-- Glean inside Excel
+> [!NOTE]  
+This Office add-in currently requires the use of a Chrome plugin to allow CORS since the add-in is hosted directly from this Github repo.
 
 ## Applies to
 
@@ -14,32 +13,27 @@ Glean Office Add-In for Excel. This add-in allows you to quickly search your Gle
 
 ## Prerequisites
 
-- Microsoft Office 365 
+- Microsoft Office 365 - Excel
 - [Chrome Extension - Allow CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 
-### Manifest
+## Setup and Run
 
-The manifest file is an XML file that describes an add-in to Office. It contains information such as a unique identifier, name, what buttons to show on the ribbon, and more. Importantly the manifest provides URL locations for where Office can find and download the add-in's resource files.
+Since this a proof-of-concept currently, the Glean Office Add-in for Excel is configured so that the files are hosted directly from this GitHub repo. Use the following steps to sideload the manifest.xml file to use the add-in in Excel.
 
-- **manifest.xml**: This manifest file gets the add-in's HTML page from this repo. This is the quickest way to try out the sample. 
-
-## Run the sample on Excel on web
-
-The Glean Office Add-in requires you to configure a web server to provide all the resources, such as HTML, image, and JavaScript files. 
-
-The Glean Office Add-in for Excel is configured so that the files are hosted directly from this GitHub repo. Use the following steps to sideload the manifest.xml file to see the sample run.
-
-1.  Download the **manifest.xml** file from the sample folder for Excel.
-1.  Open [Office on the web](https://office.live.com/).
-1.  Choose **Excel**, and then open a new document.
-1.  On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
-1.  On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
-2.  Browse to the add-in manifest file, and then select **Upload**.
-3.  Verify that the add-in loaded successfully. You will see a **Glean** button on the **Home** tab on the ribbon.
+1.  Download the **manifest.xml** file 
+2.  Open [Office on the web](https://office.live.com/).
+3.  Choose **Excel**, and then open a new document.
+4.  On the **Insert** tab on the ribbon in the **Add-ins** section, choose **Office Add-ins**.
+5.  On the **Office Add-ins** dialog, select the **MY ADD-INS** tab, choose **Manage My Add-ins**, and then **Upload My Add-in**.
+6.  Browse to the add-in manifest file, and then select **Upload**.
+7.  Verify that the add-in loaded successfully. You will see a **Glean** button on the **Home** tab on the ribbon.
+8.  Click to open the task pane. Enter in your Glean instance name and the Client API token. The client API token should have the **Search** scope enabled.
+9.  Click on **Save**
+10. In any cell, type in ```=Glean.Search("Hello")```
 
 ## Questions and feedback
 
-- Did you experience any problems with the sample? [Create an issue](https://github.com/djuang1/glean-office-add-in-for-excel/issues/new/choose) and we'll help you out.
+- Did you experience any problems with the Office Add-in? [Create an issue](https://github.com/djuang1/glean-office-add-in-for-excel/issues/new/choose) and we'll help you out.
 
 ## Copyright
 
