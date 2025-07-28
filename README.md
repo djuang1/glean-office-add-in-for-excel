@@ -29,7 +29,7 @@ Since this a proof-of-concept currently, the Glean Office Add-in for Excel is co
 7.  Verify that the add-in loaded successfully. You will see a **Glean** button on the **Home** tab on the ribbon.
 8.  Click to open the task pane. Enter in your Glean instance name and the Client API token. The client API token should have the **Search** scope enabled.
 9.  Click on **Save**
-10. In any cell, type in ```=Glean.Search("Hello")```
+10. In any cell, type in ```=Glean.Search("Hello")``` and you'll see the add-in go and grab the answer from Glean and fill in the cell.
 
 ## Questions and feedback
 
