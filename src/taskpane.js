@@ -14,23 +14,30 @@ window.gleanGlobals = {
 };
 
 async function insertData() {
-    const field1Value = document.getElementById('field1').value;
-    const field2Value = document.getElementById('field2').value;
+    const instanceNameValue = document.getElementById('instanceName').value;
+    const apiTokenValue = document.getElementById('apiToken').value;
 
-    if (!field1Value.trim() && !field2Value.trim()) {
+    if (!instanceNameValue.trim() && !apiTokenValue.trim()) {
         showStatus('Please enter at least one value', 'error');
         return;
     }
 
-    window.gleanGlobals.instance = field1Value;
-    window.gleanGlobals.token = field2Value;
+    const key = "token";
+    OfficeRuntime.storage.setItem(key, token).then(function () {
+        tokenSendStatus.value = "Success: Item with key '" + key + "' saved to Storage.";
+    }, function (error) {
+        tokenSendStatus.value = "Error: Unable to save item with key '" + key + "' to Storage. " + error;
+    });
+
+    window.gleanGlobals.instance = instanceNameValue;
+    window.gleanGlobals.token = apiTokenValue;
 
     showStatus(`Configuration applied`, 'success');
 }
 
 function clearFields() {
-    document.getElementById('field1').value = '';
-    document.getElementById('field2').value = '';
+    document.getElementById('instanceName').value = '';
+    document.getElementById('apiToken').value = '';
     hideStatus();
 }
 
@@ -52,13 +59,13 @@ function hideStatus() {
 }
 
 // Handle Enter key in input fields
-document.getElementById('field1').addEventListener('keypress', function (e) {
+document.getElementById('instanceName').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
-        document.getElementById('field2').focus();
+        document.getElementById('apiToken').focus();
     }
 });
 
-document.getElementById('field2').addEventListener('keypress', function (e) {
+document.getElementById('apiToken').addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
         insertData();
     }

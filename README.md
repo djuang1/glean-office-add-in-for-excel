@@ -15,6 +15,7 @@ Glean Office Add-In for Excel. This add-in allows you to quickly search your Gle
 ## Prerequisites
 
 - Microsoft Office 365 
+- [Chrome Extension - Allow CORS](https://chromewebstore.google.com/detail/allow-cors-access-control/lhobafahddgcelffkeicbaginigeejlf)
 
 ### Manifest
 
