@@ -6,12 +6,20 @@ Office.onReady((info) => {
             console.log("Custom functions registered");
         }
 
-        const key = "instance";
-        OfficeRuntime.storage.getItem(key).then(function (result) {
-            console.log("Success: Item with key '" + key + "' read from Storage.");
+        OfficeRuntime.storage.getItem("instance").then(function (result) {
+            console.log("Success: Item with key '" + "instance" + "' read from Storage.");
             document.getElementById('instanceName').value = result;
+            window.gleanGlobals.instance = result;
         }, function (error) {
-            console.log("Error: Unable to read item with key '" + key + "' from Storage. " + error);
+            console.log("Error: Unable to read item with key '" + "instance" + "' from Storage. " + error);
+        });
+
+        OfficeRuntime.storage.getItem("token").then(function (result) {
+            console.log("Success: Item with key '" + "token" + "' read from Storage.");
+            document.getElementById('apiToken').value = result;
+            window.gleanGlobals.token = result;
+        }, function (error) {
+            console.log("Error: Unable to read item with key '" + "token" + "' from Storage. " + error);
         });
     }
 });
@@ -30,12 +38,17 @@ async function insertData() {
         return;
     }
 
-    const key = "instance";
-    OfficeRuntime.storage.setItem(key, instanceNameValue).then(function () {
-        console.log("Success: Item with key '" + key + "' saved to Storage.");
+    OfficeRuntime.storage.setItem("instance", instanceNameValue).then(function () {
+        console.log("Success: Item with key 'instance' saved to Storage.");
+    }, function (error) {
+        console.log("Error: Unable to save item with key '" + "instance" + "' to Storage. " + error);
+    });
+
+    OfficeRuntime.storage.setItem("token", apiTokenValue).then(function () {
+        console.log("Success: Item with key '" + "token" + "' saved to Storage.");
         showStatus(`Configuration saved`, 'success');
     }, function (error) {
-        console.log("Error: Unable to save item with key '" + key + "' to Storage. " + error);
+        console.log("Error: Unable to save item with key '" + "token" + "' to Storage. " + error);
         showStatus(`Error saving configuration: ${error}`, 'error');
     });
 
