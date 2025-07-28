@@ -5,6 +5,14 @@ Office.onReady((info) => {
         if (typeof CustomFunctions !== "undefined") {
             console.log("Custom functions registered");
         }
+
+        const key = "instance";
+        OfficeRuntime.storage.getItem(key).then(function (result) {
+            console.log("Success: Item with key '" + key + "' read from Storage.");
+            document.getElementById('instanceName').value = result;
+        }, function (error) {
+            console.log("Error: Unable to read item with key '" + key + "' from Storage. " + error);
+        });
     }
 });
 
@@ -22,11 +30,13 @@ async function insertData() {
         return;
     }
 
-    const key = "token";
-    OfficeRuntime.storage.setItem(key, token).then(function () {
-        tokenSendStatus.value = "Success: Item with key '" + key + "' saved to Storage.";
+    const key = "instance";
+    OfficeRuntime.storage.setItem(key, instanceNameValue).then(function () {
+        console.log("Success: Item with key '" + key + "' saved to Storage.");
+        showStatus(`Configuration saved`, 'success');
     }, function (error) {
-        tokenSendStatus.value = "Error: Unable to save item with key '" + key + "' to Storage. " + error;
+        console.log("Error: Unable to save item with key '" + key + "' to Storage. " + error);
+        showStatus(`Error saving configuration: ${error}`, 'error');
     });
 
     window.gleanGlobals.instance = instanceNameValue;
