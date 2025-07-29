@@ -2,6 +2,8 @@
 
 ## Summary
 
+![Screenshot of Glean Office Add-in for Excel.](https://raw.githubusercontent.com/djuang1/glean-office-add-in-for-excel/refs/heads/main/assets/screenshot.png)
+
 Glean Office Add-In for Excel. This proof-of-concept add-in allows you to quickly search your Glean instance from Excel. It provides a custom function that will perform a search against a cell or a text string.
 
 > [!NOTE]  
